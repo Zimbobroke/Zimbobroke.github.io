@@ -1,0 +1,19 @@
+body{
+    background-image: url(images/Shrek.png);
+}
+
+h1 {
+    color: rgb(200, 91, 150);
+}
+
+.FancyArial {
+    /*Comment */
+    font-family: Arial;
+    font-style: italic;
+    font-size:30px
+}
+
+.HeaderBox {
+    border-style: outset;
+    border-width: 7px;
+}
