@@ -1,4 +1,7 @@
 .HeaderBox {
     border-style: inset;
-    border-width: 5px;
+    border-width: 14px;
+    padding: 10px;
+    border-color: green;
+    border-top-width: 0.5cm;
 }
