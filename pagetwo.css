@@ -26,6 +26,9 @@ a:active {
     position:absolute;
     top:200px;
 }
+#Bombaclatt {
+    font-size: 200px;
+}
 #garldief {
     float:right;
     position:absolute;
@@ -35,6 +38,12 @@ a:active {
     right: 200px;
 }
 #garldief:active {
+    animation:GarfieldHover;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+}
+#garldief:hover {
     animation:GarfieldHover;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in;
