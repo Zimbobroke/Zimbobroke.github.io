@@ -1,0 +1,23 @@
+this is for reusable and reused code
+
+HTML ->
+<br> <br><a href="pageone.html">Last page</a>
+<br> <br> <a href="index.html">Library</a>
+<br> <br> <br> <h5>Page 2</h5>
+
+CSS ->
+a:link {
+    color:purple;
+}
+
+a:visited {
+    color:tomato;
+}
+
+a:active {
+    color:brown;
+}
+
+button:hover{
+    background-color:brown;
+}

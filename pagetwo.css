@@ -1,10 +1,39 @@
 body{
-    background-image: url(images/Shrek.png);
+    background-image: url(media/Shrek.png);
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-position: center;
     background-size: cover;
 }
 
+a:link {
+    color:purple;
+}
+
+a:visited {
+    color:tomato;
+}
+
+a:active {
+    color:brown;
+}
+#SegFault:hover {
+    box-shadow: -50px -50px -50px black;
+    text-shadow: 50px 50px 50px black;
+}
+#SegFault {
+    padding: 40px;
+    font-size: 80px;
+    position:absolute;
+    top:200px;
+}
+#garldief {
+    float:right;
+    position:absolute;
+    transform: skewY(45deg);
+    transform: skewX(25deg);
+    top: 200px;
+    right: 200px;
+}
 h1 {
     color: rgb(200, 91, 150);
 }
@@ -17,6 +46,10 @@ h1 {
 }
 
 .HeaderBox {
-    border-style: outset;
+    border-style: solid;
     border-width: 7px;
+}
+#JapaneseThing {
+    margin-left: auto;
+    border-style:outset;
 }
