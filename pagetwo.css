@@ -34,6 +34,16 @@ a:active {
     top: 200px;
     right: 200px;
 }
+#garldief:active {
+    animation:GarfieldHover;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+}
+@keyframes GarfieldHover {
+    from{transform: skewY(45deg); transform: skewX(25deg);}
+    to{transform: skewY(405deg); transform: skewX(385deg);}
+}
 h1 {
     color: rgb(200, 91, 150);
 }
