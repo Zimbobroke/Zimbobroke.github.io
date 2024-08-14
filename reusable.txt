@@ -2,8 +2,9 @@ this is for reusable and reused code
 
 HTML ->
 <br> <br><a href="pageone.html">Last page</a>
+<a href="nextpage.html">Next Page</a>
 <br> <br> <a href="index.html">Library</a>
-<br> <br> <br> <h5>Page 2</h5>
+<br> <br> <br> <h5>Page X</h5>
 
 CSS ->
 a:link {
