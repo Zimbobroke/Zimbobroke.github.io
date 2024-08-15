@@ -81,8 +81,8 @@ document.getElementById("AfricaImmigration").onclick = function() {
     }
 }
 document.getElementById("AfricaRefugee").onclick = function() {
-    if (money >= 50) {
-        money -=50;
+    if (money >= 30) {
+        money -= 30;
         Labourers += 5000;
         Update(money, "money", "Money", "Dollars", "");
         Update(Labourers, "laborer", "Laborers", "");
