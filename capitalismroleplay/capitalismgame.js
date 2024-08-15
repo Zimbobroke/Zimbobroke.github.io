@@ -1,4 +1,4 @@
-let money = 1000;
+let money = 0;
 let riceStockpile = 0;
 let millionsDead = 0;
 let Labourers = 10;
