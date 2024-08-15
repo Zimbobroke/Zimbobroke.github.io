@@ -1,4 +1,4 @@
-let money = 0;
+let money = 1000;
 let riceStockpile = 0;
 let millionsDead = 0;
 let Labourers = 10;
@@ -31,15 +31,16 @@ function Birth(Number, Increment, Limit) {
         Number = 0.1
     }
     if (Number < Limit) {
-        Number += Increment
+        Number += Increment;
     }
+    return Number;
 }
 function DoAll() {
-    UpdateAllPops;
-    Birth(AfricaPop, AfricaPop / 10, Populations.Africa);
-    Birth(ChinaPop, ChinaPop / 10, Populations.China);
-    Birth(EnglandPop, 1.5, Populations.England);
-    Birth(FrancePop, 1, Populations.France);
+    UpdateAllPops();
+    AfricaPop = Birth(AfricaPop, AfricaPop / 10, Populations.Africa);
+    ChinaPop = Birth(ChinaPop, ChinaPop / 10, Populations.China);
+    EnglandPop = Birth(EnglandPop, 1.5, Populations.England);
+    FrancePop = Birth(FrancePop, 1, Populations.France);
     riceStockpile += Labourers;
     Update(riceStockpile, 'riceStockpile', 'Rice Grains', 'Grains');
     if (i > 300) {
