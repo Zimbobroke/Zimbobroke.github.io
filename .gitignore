@@ -1,1 +1,5 @@
 *.txt
+*.js~
+*.un~
+.swo
+.swp
