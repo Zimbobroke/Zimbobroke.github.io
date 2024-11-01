@@ -93,6 +93,10 @@ function ImmigrationBirth(Population, Source, Increment, Limit) {
         Population = Limit
     }
 }
+window.addEventListener('beoforeunload', ()=>{
+    event.preventDefault()
+    event.returnValue = ""
+})
 
 var audioBabyCrying = new Audio("media/baby-crying.mp4")
 var audioRiverFLowing = new Audio("media/river-flowing.mp4")
