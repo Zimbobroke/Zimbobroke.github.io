@@ -119,7 +119,7 @@ const buttonEngland = document.getElementById("England")
 const buttonMandateHeaven = document.getElementById("chinaImmigration")
 const buttonKillOnePerson = document.getElementById("killOnePerson")
 
-const prices = {africaBuyPrice: 10, africaRefugeePrice: 200, chinaRefugeePrice: 100000, chinaFarmPrice: 2000, indiaCallCenterPrice: 10000, franceNukePrice: 60000000, englandNukePrice: 50000000} //if you change something here change the HTML text
+const prices = {africaBuyPrice: 10, africaRefugeePrice: 200, chinaRefugeePrice: 500000, chinaFarmPrice: 2000, indiaCallCenterPrice: 10000, franceNukePrice: 60000000, englandNukePrice: 50000000} //if you change something here change the HTML text
 const labourers = {africaBuyLaborers: 1000, africaRefugeeLabourers: 50000, chinaFarmLabourers: 6000, chinaRefugeeLabourers: 3000000, indiaCallCenterLabourers: 100} //read above
  
 buttonFrance.onclick = function() {
