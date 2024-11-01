@@ -5,10 +5,8 @@ let africaChildren = 300
 let chinaChildren = 10
 let indiaScammer = 0
 let eventHappening = false
-const Populations = {France: 67.97, England: 55.98, Africa: 1480.77, China: 1409}
-const prices = {africaBuyPrice: 80, africaRefugeePrice: 200, chinaRefugeePrice: 100000, chinaFarmPrice: 6000, indiaCallCenterPrice: 10000, franceNuke: 60000000, englandNuke: 50000000} //if you change something here change the HTML text
-const labourers = {africaBuyLaborers: 1000, africaRefugeeLabourers: 5000, chinaFarmLabourers: 2000, chinaRefugeeLabourers: 3000000, indiaCallCenterLabourers: 50} //same here
- 
+const Populations = {France: 66.5, England: 55.98, Africa: 1480.77, China: 1409}
+
 let randomNumb = 0
 
 let popFrance = Populations.France
@@ -117,12 +115,15 @@ const buttonEngland = document.getElementById("England")
 const buttonMandateHeaven = document.getElementById("chinaImmigration")
 const buttonKillOnePerson = document.getElementById("killOnePerson")
 
+const prices = {africaBuyPrice: 10, africaRefugeePrice: 200, chinaRefugeePrice: 100000, chinaFarmPrice: 2000, indiaCallCenterPrice: 10000, franceNukePrice: 60000000, englandNukePrice: 50000000} //if you change something here change the HTML text
+const labourers = {africaBuyLaborers: 1000, africaRefugeeLabourers: 50000, chinaFarmLabourers: 6000, chinaRefugeeLabourers: 3000000, indiaCallCenterLabourers: 100} //read above
+ 
 buttonFrance.onclick = function() {
-    if (money >= 600) {
-        money -= 600
+    if (money >= prices.franceNukePrice) {
+        money -= prices.franceNukePrice
         audioNuclearExplosion.play()
+        addDeaths(popFrance)
         popFrance -= popFrance
-        addDeaths(popFrance - (popFrance / 20))
     }
 }
 buttonFrance.onmouseenter = function() {
@@ -131,14 +132,14 @@ buttonFrance.onmouseenter = function() {
 }
 buttonFrance.onmouseleave = function() {
     audioChansonDeLoignon.pause()
-    audioChansonDeLoignon.currentTime = 0
+    //audioChansonDeLoignon.currentTime = 0
 }
 buttonEngland.onclick = function() {
-    if (money >= 500) {
-        money -= 500
+    if (money >= prices.englandNukePrice) {
+        money -= prices.englandNukePrice
         audioNuclearExplosion.play()
+        addDeaths(popEngland)
         popEngland -= popEngland
-        addDeaths(popEngland - (popEngland / 20))
     }
 }
 buttonEngland.onmouseenter = function() {
@@ -147,15 +148,15 @@ buttonEngland.onmouseenter = function() {
 }
 buttonEngland.onmouseout = function() {
     audioRuleBritannia.pause()
-    audioRuleBritannia.currentTime = 0
+    //audioRuleBritannia.currentTime = 0
 }
 buttonMandateHeaven.onclick = function() {
     if (money >= prices.chinaRefugeePrice && popChina > 3) {
         audioCrowdScreaming.play()
         money -= prices.chinaRefugeePrice
         chinaChildren += labourers.chinaRefugeeLabourers
-        addDeaths(popChina * 0.6)
-        popChina = popChina * 0.4 - 3
+        addDeaths(popChina * 0.2)
+        popChina = popChina * 0.8 - 3
     }
 }
 buttonAfricaChildBuy.onclick = function() {
@@ -172,8 +173,8 @@ buttonAfricaWater.onclick = function() {
         audioRiverFLowing.play()
         money -= prices.africaRefugeePrice
         africaChildren += labourers.africaRefugeeLabourers
-        addDeaths(popAfrica * 0.3)
-        popAfrica *= 0.7
+        addDeaths(popAfrica * 0.02)
+        popAfrica *= 0.98
     }
 }
 buttonCCPRiceFarm.onclick = function() {
@@ -198,9 +199,9 @@ buttonSellRice.onclick = function() {
     }
 }
 buttonKillOnePerson.onclick = function() {
-    if (money >= 10) {
+    if (money >= 0.7) {
         audioVineBoom.play()
-        money -= 10
+        money -= 0.7
         addDeaths(1 / 1000000)
     }
 }
@@ -208,12 +209,12 @@ buttonKillOnePerson.onclick = function() {
 let i = 1
 
 function doAll() {
-    Birth(popAfrica, popAfrica / 10 + 0.5, Populations.Africa)
-    Birth(popChina, popChina / 10 + 0.5, Populations.China)
+    popAfrica = Birth(popAfrica, popAfrica / 100 + 0.5, Populations.Africa)
+    popChina = Birth(popChina, popChina / 100 + 0.5, Populations.China)
     ImmigrationBirth(popEngland, popChina, popChina / 5, Populations.England)
     ImmigrationBirth(popFrance, popAfrica, popAfrica / 5, Populations.France)
-    money = money + indiaScammer * 10
-    riceStockpile += (africaChildren * 0.05) + (chinaChildren * 0.7)
+    money += indiaScammer
+    riceStockpile += (africaChildren * 0.05) + (chinaChildren * 0.5)
     UpdateAllText()
     UpdateAllPops()
     if (i%1000 == 0) {
