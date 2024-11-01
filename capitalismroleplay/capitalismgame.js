@@ -1,4 +1,4 @@
-let money = 100000 //Set to 0 before saving
+let money = 0 //Set to 0 before saving
 let riceStockpile = 0
 let millionsDead = 0
 let africaChildren = 300
